@@ -10,7 +10,7 @@ final randomColorProvider = StateProvider.autoDispose<List<Color>>((ref) {
     int b = rnd.nextInt(255);
     int r = rnd.nextInt(255);
     int g = rnd.nextInt(255);
-    return Color.fromRGBO(r, g, b, 0.1);
+    return Color.fromRGBO(r, g, b, 0.5);
   }
 
   return [

@@ -48,7 +48,7 @@ class AnimatedCrossedWavesState extends State<AnimatedCrossedWaves>
     return CustomPaint(
       painter: AnimatedCrossedWavesPainter(
         animation: _animation,
-        colors: Colors.white38,
+        colors: Colors.white12,
       ),
       size: size,
     );
@@ -79,10 +79,10 @@ class AnimatedCrossedWavesPainter extends CustomPainter {
     final path = Path();
 
     // Parámetros ajustables
-    const amplitude = 100.0;
+    const amplitude = 30;
     const frequency1 = 0.02;
     const frequency2 = 0.015;
-    const waveCount = 2;
+    const waveCount = 1;
 
     // Calculamos la posición de inicio basada en el valor de la animación
     final startOffset = size.width * (1 - animation.value);

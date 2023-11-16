@@ -151,7 +151,7 @@ class HomeTestState extends State<HomeTest> {
   @override
   Widget build(BuildContext context) {
     // Definimos las variables
-    scaleFactor = MediaQuery.of(context).textScaleFactor;
+    scaleFactor = MediaQuery.of(context).textScaler.scale(1);
     themeIsDark =
         Theme.of(context).brightness == Brightness.dark ? true : false;
     boxDecorationFondo = Theme.of(context).brightness == Brightness.dark
@@ -397,7 +397,7 @@ class OnboadingState extends State<Onboading> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     // Definimos las variables
-    scaleFactor = MediaQuery.of(context).textScaleFactor;
+    scaleFactor = MediaQuery.of(context).textScaler.scale(1);
 
     return SizedBox(
       width: double.infinity,

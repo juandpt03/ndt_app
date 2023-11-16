@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ndt_app/config/config.dart';
 
-void main() {
+import 'features/home/presentation/providers/providers.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     ProviderScope(
         child: DevicePreview(
@@ -13,13 +16,13 @@ void main() {
   );
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
-      theme: AppTheme().getAppTheme(),
+      theme: ref.watch(themeProvider).getAppTheme(),
       debugShowCheckedModeBanner: false,
       routerConfig: appRouter,
     );

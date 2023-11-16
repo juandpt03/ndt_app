@@ -7,7 +7,7 @@ class AppTheme {
 
   AppTheme({
     this.colorSchemeSeed = const Color(0xFF0F3057),
-    this.isDark = true,
+    this.isDark = false,
   });
 
   ThemeData getAppTheme() => ThemeData(
@@ -15,6 +15,7 @@ class AppTheme {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         colorSchemeSeed: colorSchemeSeed,
         brightness: isDark ? Brightness.dark : Brightness.light,
+
         textTheme: isDark
             ? GoogleFonts.openSansTextTheme(
                 ThemeData.dark().textTheme,

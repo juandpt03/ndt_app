@@ -20,8 +20,8 @@ class HomeScreen extends ConsumerWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                colors.primary.withOpacity(0.3),
-                colors.background,
+                colors.primary.withOpacity(0.4),
+                colors.background.withOpacity(0.2),
               ],
             ),
           )
@@ -31,28 +31,52 @@ class HomeScreen extends ConsumerWidget {
               end: Alignment.bottomCenter,
               colors: [
                 colors.primary,
-                colors.primary.withOpacity(0.8),
+                colors.primary.withOpacity(0.3),
               ],
             ),
           );
 
+    final appBarTextStyle = TextStyle(
+      fontFamily: GoogleFonts.openSans().fontFamily,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+      shadows: const [
+        Shadow(
+          blurRadius: 10,
+          color: Colors.black38,
+          offset: Offset(2.0, 5.0),
+        ),
+      ],
+    );
     return Container(
       decoration: boxDecoration,
       child: Stack(
         children: [
           // background
-          const HomeBackground(),
+          const Positioned(
+            bottom: 250,
+            child: HomeBackground(),
+          ),
           Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
-              title: const Text(
+              title: Text(
                 'Ondas Guiadas',
+                style: appBarTextStyle,
+              ),
+              iconTheme: const IconThemeData(
+                color: Colors.white70,
               ),
               actions: [
                 IconButton(
-                  icon: const Icon(Icons.settings),
-                  onPressed: () {},
+                  icon: Icon(
+                    isDark ? Icons.light_mode : Icons.dark_mode,
+                    color: Colors.white70,
+                  ),
+                  onPressed: () {
+                    ref.read(themeProvider.notifier).toggleDarkMode();
+                  },
                 ),
               ],
             ),
@@ -178,11 +202,24 @@ class SearchButtom extends StatelessWidget {
   }
 }
 
-class InfoCards extends ConsumerWidget {
+class InfoCards extends ConsumerStatefulWidget {
   const InfoCards({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<InfoCards> createState() => _InfoCardsState();
+}
+
+class _InfoCardsState extends ConsumerState<InfoCards>
+    with TickerProviderStateMixin {
+  int currentSlide = 0;
+  late AnimationController animateController;
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final color = ref.watch(randomColorProvider);
     return ref.watch(dataProvider).when(
           data: (dataList) {
@@ -193,13 +230,22 @@ class InfoCards extends ConsumerWidget {
                 itemCount: dataList.length,
                 itemBuilder: (context, index, realIndex) {
                   final data = dataList[index];
+                  bool focusWidget = currentSlide == index ? true : false;
 
-                  return _Cards(data: data, color: color[index]);
+                  return _Card(
+                    data: data,
+                    color: color[index],
+                    focusWidget: focusWidget,
+                  );
                 },
                 options: CarouselOptions(
-                  autoPlay: true,
                   enlargeCenterPage: true,
                   viewportFraction: 0.6,
+                  onPageChanged: (index, reason) {
+                    currentSlide = index;
+                    setState(() {});
+                  },
+                  autoPlay: true,
                 ),
               ),
             );
@@ -214,68 +260,76 @@ class InfoCards extends ConsumerWidget {
   }
 }
 
-class _Cards extends StatelessWidget {
+class _Card extends StatelessWidget {
   final Color color;
-  const _Cards({
+  final bool focusWidget;
+  const _Card({
     required this.data,
     required this.color,
+    required this.focusWidget,
   });
 
   final Content data;
 
   @override
   Widget build(BuildContext context) {
-    // final colors = Theme.of(context).colorScheme;
-    return Container(
-      padding: const EdgeInsets.only(
-        left: 12.0,
-        top: 20.0,
-        right: 20.0,
-        bottom: 20.0,
-      ),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [Colors.transparent, color],
+    return AnimatedOpacity(
+      duration: const Duration(seconds: 1),
+      opacity: focusWidget ? 0.8 : 0.2,
+      child: Container(
+        padding: const EdgeInsets.only(
+          left: 12.0,
+          top: 20.0,
+          right: 20.0,
+          bottom: 20.0,
         ),
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(30.0),
-        boxShadow: const <BoxShadow>[
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 10.0,
-            offset: Offset(0.0, 8.0),
-          )
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          // text : name
-          Text(
-            data.title,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.amber,
-            ),
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              Colors.transparent,
+              color,
+            ],
           ),
-          // text : descripción
-          const SizedBox(height: 12.0),
-          Text(
-            data.description,
-            style: const TextStyle(
-              fontSize: 16.0,
-              color: Colors.white54,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(30.0),
+          boxShadow: const <BoxShadow>[
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 10.0,
+              offset: Offset(0.0, 8.0),
+            )
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            // text : name
+            Text(
+              data.title,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.amber,
+              ),
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
             ),
-            textAlign: TextAlign.center,
-            maxLines: 5,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ],
+            // text : descripción
+            const SizedBox(height: 12.0),
+            Text(
+              data.description,
+              style: const TextStyle(
+                fontSize: 16.0,
+                color: Colors.white54,
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 5,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
       ),
     );
   }

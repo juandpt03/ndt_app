@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-// import 'package:ndt_app/features/home/presentation/screens/home/home_test.dart';
+import 'package:ndt_app/features/home/domain/entities/content.dart';
 import 'package:ndt_app/features/home/presentation/screens/screens.dart';
 
 final appRouter = GoRouter(
@@ -10,9 +10,14 @@ final appRouter = GoRouter(
       builder: (context, state) => const HomeScreen(),
       name: HomeScreen.routeName,
     ),
-    // GoRoute(
-    //   path: '/home_test',
-    //   builder: (context, state) => const HomeTest(),
-    // ),
+    GoRoute(
+      path: '/og',
+      builder: (context, state) {
+        final Content data = state.extra as Content;
+
+        return OgScreen(data: data);
+      },
+      name: OgScreen.routeName,
+    ),
   ],
 );

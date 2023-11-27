@@ -8,4 +8,9 @@ class Content {
     required this.description,
     required this.image,
   });
+  toJson() => {
+        'title': title,
+        'description': description,
+        'image': image,
+      };
 }

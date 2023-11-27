@@ -17,10 +17,10 @@ class AppTheme {
         brightness: isDark ? Brightness.dark : Brightness.light,
 
         textTheme: isDark
-            ? GoogleFonts.openSansTextTheme(
+            ? GoogleFonts.aBeeZeeTextTheme(
                 ThemeData.dark().textTheme,
               )
-            : GoogleFonts.openSansTextTheme(
+            : GoogleFonts.aBeeZeeTextTheme(
                 ThemeData.light().textTheme,
               ),
       );

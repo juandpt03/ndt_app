@@ -27,23 +27,33 @@ class CustomBottomNavigationBar extends ConsumerWidget {
           /// Home
           DotNavigationBarItem(
             icon: const Icon(
-              FontAwesomeIcons.sellsy,
+              FontAwesomeIcons.house,
+              size: 22,
             ),
           ),
 
           /// Likes
           DotNavigationBarItem(
-            icon: const Icon(Icons.calculate_outlined),
+            icon: const Icon(
+              FontAwesomeIcons.video,
+              size: 22,
+            ),
           ),
 
           /// Search
           DotNavigationBarItem(
-            icon: const Icon(Icons.inventory_outlined),
+            icon: const Icon(
+              FontAwesomeIcons.gamepad,
+              size: 22,
+            ),
           ),
 
           /// Profile
           DotNavigationBarItem(
-            icon: const Icon(FontAwesomeIcons.robot),
+            icon: const Icon(
+              FontAwesomeIcons.robot,
+              size: 22,
+            ),
           ),
         ],
       ),

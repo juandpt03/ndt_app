@@ -1,4 +1,4 @@
-package com.example.ndt_app
+package com.juandpt_ndt_app
 
 import io.flutter.embedding.android.FlutterActivity
 

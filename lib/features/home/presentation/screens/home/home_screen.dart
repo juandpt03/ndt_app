@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ndt_app/features/chat/presentation/screens/chat_screen.dart';
 import 'package:ndt_app/features/home/presentation/providers/providers.dart';
 import 'package:ndt_app/features/home/presentation/screens/screens.dart';
 import 'package:ndt_app/features/home/presentation/widgets/widgets.dart';
@@ -49,7 +50,7 @@ class HomeScreen extends ConsumerWidget {
               HomeView(),
               VideosScreen(),
               WelcomeScreen(),
-              SizedBox(),
+              ChatScreen(),
             ],
           ),
         ],

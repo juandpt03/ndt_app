@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ndt_app/features/home/domain/domain.dart';
-
 import 'package:ndt_app/features/home/presentation/providers/providers.dart';
 import 'package:ndt_app/features/home/presentation/screens/screens.dart';
 
@@ -126,29 +125,37 @@ class CustomDrawer extends StatelessWidget {
   }
 }
 
-class SearchButtom extends StatelessWidget {
+class SearchButtom extends ConsumerWidget {
   const SearchButtom({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final colors = Theme.of(context).colorScheme;
     return ClipRRect(
       child: Opacity(
         opacity: 0.8,
         child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
           color: Colors.white30,
           child: ListTile(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
             leading: Icon(
               Icons.search,
               color: colors.background,
             ),
             title: Text(
-              "Buscar tema",
+              "Comienza a Investigar",
               style: TextStyle(
                 color: colors.background,
               ),
             ),
-            onLongPress: () {},
+            onTap: () {
+              ref.read(navigationBarProvider.notifier).state = 3;
+            },
           ),
         ),
       ),

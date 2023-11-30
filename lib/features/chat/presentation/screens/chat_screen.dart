@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:ndt_app/config/constants/enviroment.dart';
 
 class ChatScreen extends StatefulWidget {
+  static const routeName = 'chat';
   const ChatScreen({super.key});
 
   @override

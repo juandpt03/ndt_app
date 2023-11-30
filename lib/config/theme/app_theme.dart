@@ -15,12 +15,11 @@ class AppTheme {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         colorSchemeSeed: colorSchemeSeed,
         brightness: isDark ? Brightness.dark : Brightness.light,
-
         textTheme: isDark
-            ? GoogleFonts.aBeeZeeTextTheme(
+            ? GoogleFonts.robotoSlabTextTheme(
                 ThemeData.dark().textTheme,
               )
-            : GoogleFonts.aBeeZeeTextTheme(
+            : GoogleFonts.robotoSlabTextTheme(
                 ThemeData.light().textTheme,
               ),
       );

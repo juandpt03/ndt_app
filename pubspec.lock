@@ -57,14 +57,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  bottom_navy_bar:
-    dependency: "direct main"
-    description:
-      name: bottom_navy_bar
-      sha256: b30d9a566909b9a56f366b9e8abe0c24ef8939e4b464d1cad5ded6a1e2dcfca1
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.0"
   build:
     dependency: transitive
     description:
@@ -297,11 +289,27 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  fluid_dialog:
+    dependency: "direct main"
+    description:
+      name: fluid_dialog
+      sha256: "180c8be98efecc7257e1ee337fef9882256eb2b597dc3e0d41db3392b1ccea81"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_inappwebview:
+    dependency: transitive
+    description:
+      name: flutter_inappwebview
+      sha256: d198297060d116b94048301ee6749cd2e7d03c1f2689783f52d210a6b7aba350
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.8.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -661,6 +669,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.3"
+  quickalert:
+    dependency: "direct main"
+    description:
+      name: quickalert
+      sha256: "0c21c9be68b9ae76082e1ad56db9f51202a38e617e08376f05375238277cfb5a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   riverpod:
     dependency: transitive
     description:
@@ -765,6 +781,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -962,6 +986,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
+  youtube_player_flutter:
+    dependency: "direct main"
+    description:
+      name: youtube_player_flutter
+      sha256: "72d487e1a1b9155a2dc9d448c137380791101a0ff623723195275ac275ac6942"
+      url: "https://pub.dev"
+    source: hosted
+    version: "8.1.2"
 sdks:
   dart: ">=3.2.0-194.0.dev <4.0.0"
   flutter: ">=3.7.0"

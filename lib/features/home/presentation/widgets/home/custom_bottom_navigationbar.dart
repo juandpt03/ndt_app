@@ -2,6 +2,7 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ndt_app/features/home/presentation/providers/providers.dart';
 
 class CustomBottomNavigationBar extends ConsumerWidget {
   final int currentIndex;
@@ -22,7 +23,9 @@ class CustomBottomNavigationBar extends ConsumerWidget {
         backgroundColor: Colors.black26,
         currentIndex: currentIndex,
         enablePaddingAnimation: true,
-        onTap: (index) {},
+        onTap: (index) {
+          ref.read(navigationBarProvider.notifier).update((state) => index);
+        },
         items: [
           /// Home
           DotNavigationBarItem(

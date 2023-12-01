@@ -53,15 +53,71 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       backgroundColor: Colors.transparent,
       body: DashChat(
-        inputOptions: const InputOptions(
-          inputTextStyle: TextStyle(
+        inputOptions: InputOptions(
+          inputToolbarPadding: const EdgeInsets.symmetric(horizontal: 20),
+
+          inputDecoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+            border: UnderlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            hintText: '¿Qué quieres preguntar?',
+            hintStyle: const TextStyle(
+              color: Colors.black54,
+              fontSize: 15,
+            ),
+          ),
+          inputTextStyle: const TextStyle(
             color: Colors.black,
           ),
+          // alwaysShowSend: true,
+          sendButtonBuilder: (onSend) {
+            return IconButton(
+              onPressed: onSend,
+              icon: const Icon(
+                Icons.send,
+                color: Colors.white,
+              ),
+            );
+          },
+          sendOnEnter: true,
         ),
         messageOptions: MessageOptions(
+          avatarBuilder: (user, onPressAvatar, onLongPressAvatar) {
+            if (user.id == _gptChatUser.id) {
+              return CircleAvatar(
+                backgroundColor: Colors.transparent,
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.4),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: Image.asset('assets/images/chat/robot.png'),
+                    ),
+                  ],
+                ),
+              );
+            }
+            return CircleAvatar(
+              backgroundColor: Colors.transparent,
+              child: Image.asset('assets/images/chat/user.png'),
+            );
+          },
+          showTime: true,
+          showCurrentUserAvatar: true,
           currentUserContainerColor: colors.primaryContainer,
           currentUserTextColor: colors.primary,
           containerColor: colors.secondaryContainer,
+          textColor: colors.onBackground.withOpacity(0.8),
         ),
         currentUser: _currentUser,
         onSend: (ChatMessage message) {

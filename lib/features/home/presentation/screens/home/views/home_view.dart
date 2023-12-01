@@ -130,7 +130,6 @@ class SearchButtom extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final colors = Theme.of(context).colorScheme;
     return ClipRRect(
       child: Opacity(
         opacity: 0.8,
@@ -143,14 +142,14 @@ class SearchButtom extends ConsumerWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            leading: Icon(
+            leading: const Icon(
               Icons.search,
-              color: colors.background,
+              color: Colors.white70,
             ),
-            title: Text(
+            title: const Text(
               "Comienza a Investigar",
               style: TextStyle(
-                color: colors.background,
+                color: Colors.white70,
               ),
             ),
             onTap: () {

@@ -88,23 +88,7 @@ class _ChatScreenState extends State<ChatScreen> {
             if (user.id == _gptChatUser.id) {
               return CircleAvatar(
                 backgroundColor: Colors.transparent,
-                child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.4),
-                            blurRadius: 10,
-                            offset: const Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: Image.asset('assets/images/chat/robot.png'),
-                    ),
-                  ],
-                ),
+                child: Image.asset('assets/images/chat/robot.png'),
               );
             }
             return CircleAvatar(

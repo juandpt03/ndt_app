@@ -1,4 +1,5 @@
 # Ondas Guiadas Aplicación Móvil
+La aplicación móvil "Ondas Guiadas" es una innovadora herramienta diseñada para proporcionar una experiencia completa y enriquecedora en el campo de las ondas guiadas. Esta técnica revolucionaria se explora a través de diversas funciones que mejoran la comprensión, brindan entretenimiento educativo y facilitan la interacción instantánea. Aquí tienes una descripción detallada de las funciones principales:
 
 ## Contenido Multimedia Mejorado:
 Ofrece un extenso conjunto de materiales multimedia mejorados que abarcan textos, imágenes y gráficos interactivos para una comprensión profunda de las ondas guiadas.

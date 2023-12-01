@@ -2,6 +2,7 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ndt_app/features/home/presentation/providers/providers.dart';
 
 class CustomBottomNavigationBar extends ConsumerWidget {
   final int currentIndex;
@@ -22,28 +23,40 @@ class CustomBottomNavigationBar extends ConsumerWidget {
         backgroundColor: Colors.black26,
         currentIndex: currentIndex,
         enablePaddingAnimation: true,
-        onTap: (index) {},
+        onTap: (index) {
+          ref.read(navigationBarProvider.notifier).update((state) => index);
+        },
         items: [
           /// Home
           DotNavigationBarItem(
             icon: const Icon(
-              FontAwesomeIcons.sellsy,
+              FontAwesomeIcons.house,
+              size: 22,
             ),
           ),
 
           /// Likes
           DotNavigationBarItem(
-            icon: const Icon(Icons.calculate_outlined),
+            icon: const Icon(
+              FontAwesomeIcons.video,
+              size: 22,
+            ),
           ),
 
           /// Search
           DotNavigationBarItem(
-            icon: const Icon(Icons.inventory_outlined),
+            icon: const Icon(
+              FontAwesomeIcons.gamepad,
+              size: 22,
+            ),
           ),
 
           /// Profile
           DotNavigationBarItem(
-            icon: const Icon(FontAwesomeIcons.robot),
+            icon: const Icon(
+              FontAwesomeIcons.robot,
+              size: 22,
+            ),
           ),
         ],
       ),

@@ -22,14 +22,12 @@ final appRouter = GoRouter(
       name: OgInfoScreen.routeName,
     ),
     GoRoute(
-      path: '/og:index',
+      path: '/og',
       builder: (context, state) {
         final Content data = state.extra as Content;
-        final String index = state.pathParameters['index'] ?? '';
 
         return OgScreen(
           data: data,
-          index: index,
         );
       },
       name: OgScreen.routeName,

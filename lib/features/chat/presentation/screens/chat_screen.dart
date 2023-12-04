@@ -50,6 +50,7 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: isDark
             ? colors.primaryContainer.withOpacity(0.8)
             : Colors.transparent,
+        leading: const SizedBox(),
       ),
       backgroundColor: Colors.transparent,
       body: DashChat(

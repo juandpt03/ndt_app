@@ -44,6 +44,10 @@ class HomeScreen extends ConsumerWidget {
           Container(
             decoration: boxDecoration,
           ),
+          const Positioned(
+            bottom: 150,
+            child: HomeBackground(),
+          ),
           IndexedStack(
             index: ref.watch(navigationBarProvider),
             children: const [

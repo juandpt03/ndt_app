@@ -1,7 +1,7 @@
 name: ndt_app
 description: A new Flutter project.
 publish_to: 'none'
-version: 1.0.1+2
+version: 1.0.1+3
 
 environment:
   sdk: '>=3.1.3 <4.0.0'
@@ -45,14 +45,14 @@ flutter_launcher_icons:
   min_sdk_android: 21
 flutter_native_splash:
   color: "#ffffff"
-  image: assets/images/icon/icon.png
+  image: assets/images/splash/splash.png
   color_dark: "#121212"
-  image_dark: assets/images/icon/icon.png
+  image_dark: assets/images/splash/splash.png
   
   android_12:
-    image: assets/images/icon/icon.png
+    image: assets/images/splash/splash.png
     icon_background_color: "#ffffff"
-    image_dark: assets/images/icon/icon.png
+    image_dark: assets/images/splash/splash.png
     icon_background_color_dark: "#121212"
 
   web: false

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ndt_app/features/home/domain/domain.dart';
+import 'package:ndt_app/features/home/presentation/providers/providers.dart';
 import 'package:ndt_app/features/home/presentation/screens/screens.dart';
 import 'package:ndt_app/features/home/presentation/widgets/widgets.dart';
 import 'package:shimmer/shimmer.dart';
@@ -29,24 +31,22 @@ class OgInfoScreen extends StatelessWidget {
   }
 }
 
-class _PlayButton extends StatelessWidget {
+class _PlayButton extends ConsumerWidget {
   final Content data;
   const _PlayButton({
     required this.data,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final textStyle = Theme.of(context).textTheme;
     final colors = Theme.of(context).colorScheme;
     return ElevatedButton.icon(
       onPressed: () {
+        ref.read(ogIndexProvider.notifier).update((state) => state = 0);
         context.pushNamed(
           OgScreen.routeName,
           extra: data,
-          pathParameters: {
-            'index': '0',
-          },
         );
       },
       icon: Icon(
@@ -113,7 +113,7 @@ class _OgBodyState extends State<_OgBody> {
   }
 }
 
-class _Cards extends StatelessWidget {
+class _Cards extends ConsumerWidget {
   const _Cards({
     required this.data,
   });
@@ -121,7 +121,7 @@ class _Cards extends StatelessWidget {
   final Content data;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final colors = Theme.of(context).colorScheme;
     final Size size = MediaQuery.of(context).size;
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -157,12 +157,12 @@ class _Cards extends StatelessWidget {
                         ),
                         visualDensity: VisualDensity.compact,
                         onTap: () {
+                          ref
+                              .read(ogIndexProvider.notifier)
+                              .update((state) => state = index);
                           context.pushNamed(
                             OgScreen.routeName,
                             extra: data,
-                            pathParameters: {
-                              'index': index.toString(),
-                            },
                           );
                         },
                         leading: Container(

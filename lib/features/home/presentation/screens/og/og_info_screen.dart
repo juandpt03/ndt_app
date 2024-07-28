@@ -51,13 +51,13 @@ class _PlayButton extends ConsumerWidget {
       },
       icon: Icon(
         Icons.play_arrow,
-        color: colors.onBackground,
+        color: colors.onSurface,
       ),
       label: Text(
         'Comenzar Lecturas',
         style: textStyle.bodyLarge!.copyWith(
           fontWeight: FontWeight.bold,
-          color: colors.onBackground,
+          color: colors.onSurface,
         ),
       ),
     );
@@ -147,7 +147,7 @@ class _Cards extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       surfaceTintColor:
-                          isDark ? colors.onBackground : Colors.transparent,
+                          isDark ? colors.onSurface : Colors.transparent,
                       elevation: 2,
                       margin: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 5),
@@ -195,7 +195,7 @@ class _Cards extends ConsumerWidget {
                               .textTheme
                               .headlineSmall
                               ?.copyWith(
-                                color: colors.onBackground,
+                                color: colors.onSurface,
                                 fontSize: 21,
                               ),
                         ),
@@ -203,7 +203,7 @@ class _Cards extends ConsumerWidget {
                           description,
                           style:
                               Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                    color: colors.onBackground.withOpacity(0.6),
+                                    color: colors.onSurface.withOpacity(0.6),
                                   ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -239,7 +239,7 @@ class _Title extends StatelessWidget {
           shadows: isDark
               ? [
                   BoxShadow(
-                    color: colors.onBackground.withOpacity(0.2),
+                    color: colors.onSurface.withOpacity(0.2),
                     blurRadius: 2,
                     offset: const Offset(1, 1),
                   ),

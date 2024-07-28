@@ -153,7 +153,7 @@ class _QuestionOptions extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final colors = Theme.of(context).colorScheme;
     final textStyle = Theme.of(context).textTheme.bodyLarge?.copyWith(
-          color: colors.onBackground,
+          color: colors.onSurface,
           fontSize: 15,
         );
     final Size size = MediaQuery.of(context).size;

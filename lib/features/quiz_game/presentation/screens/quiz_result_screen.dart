@@ -159,9 +159,8 @@ class QuizResultScreen extends ConsumerWidget {
                         context.pushReplacementNamed(QuizScreen.routeName);
                       },
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all(
+                        backgroundColor: WidgetStateProperty.all(Colors.white),
+                        shape: WidgetStateProperty.all(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                           ),
@@ -189,9 +188,8 @@ class QuizResultScreen extends ConsumerWidget {
                         context.pushReplacementNamed(HomeScreen.routeName);
                       },
                       style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all(
+                        backgroundColor: WidgetStateProperty.all(Colors.white),
+                        shape: WidgetStateProperty.all(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                           ),
@@ -333,8 +331,8 @@ class QuizResultScreen extends ConsumerWidget {
                         },
                         style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape: MaterialStateProperty.all(
+                              WidgetStateProperty.all(Colors.white),
+                          shape: WidgetStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
                             ),
@@ -362,8 +360,8 @@ class QuizResultScreen extends ConsumerWidget {
                         },
                         style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all(Colors.white),
-                          shape: MaterialStateProperty.all(
+                              WidgetStateProperty.all(Colors.white),
+                          shape: WidgetStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
                             ),

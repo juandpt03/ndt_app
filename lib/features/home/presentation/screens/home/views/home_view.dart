@@ -107,7 +107,7 @@ class CustomDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: colors.background,
+              color: colors.surface,
             ),
             child: const Text('Drawer Header'),
           ),

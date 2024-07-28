@@ -102,7 +102,7 @@ class _ChatScreenState extends State<ChatScreen> {
           currentUserContainerColor: colors.primaryContainer,
           currentUserTextColor: colors.primary,
           containerColor: colors.secondaryContainer,
-          textColor: colors.onBackground.withOpacity(0.8),
+          textColor: colors.onSurface.withOpacity(0.8),
         ),
         currentUser: _currentUser,
         onSend: (ChatMessage message) {

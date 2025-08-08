@@ -47,13 +47,13 @@ class _VideoPlayerState extends State<VideoPlayer> {
       borderRadius: BorderRadius.circular(5),
       child: YoutubePlayer(
         controller: _controller,
-        bottomActions: [
+        bottomActions: const [
           RemainingDuration(),
           ProgressBar(
             isExpanded: true,
           ),
           RemainingDuration(),
-          const PlaybackSpeedButton(),
+          PlaybackSpeedButton(),
         ],
       ),
     );

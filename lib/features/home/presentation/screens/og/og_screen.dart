@@ -203,8 +203,8 @@ class _Loading extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Shimmer.fromColors(
-      baseColor: Colors.grey.withOpacity(0.5),
-      highlightColor: Colors.white.withOpacity(0.5),
+      baseColor: Colors.grey.withValues(alpha: 0.5),
+      highlightColor: Colors.white.withValues(alpha: 0.5),
       child: Column(
         children: [
           BannerPlaceholder(

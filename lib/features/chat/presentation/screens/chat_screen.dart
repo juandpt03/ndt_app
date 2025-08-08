@@ -48,7 +48,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
         ),
         backgroundColor: isDark
-            ? colors.primaryContainer.withOpacity(0.8)
+            ? colors.primaryContainer.withValues(alpha: 0.8)
             : Colors.transparent,
         leading: const SizedBox(),
       ),
@@ -102,7 +102,7 @@ class _ChatScreenState extends State<ChatScreen> {
           currentUserContainerColor: colors.primaryContainer,
           currentUserTextColor: colors.primary,
           containerColor: colors.secondaryContainer,
-          textColor: colors.onBackground.withOpacity(0.8),
+          textColor: colors.onSurface.withValues(alpha: 0.8),
         ),
         currentUser: _currentUser,
         onSend: (ChatMessage message) {

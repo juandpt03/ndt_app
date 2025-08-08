@@ -107,7 +107,7 @@ class CustomDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: colors.background,
+              color: colors.surface,
             ),
             child: const Text('Drawer Header'),
           ),
@@ -266,7 +266,7 @@ class _Card extends ConsumerWidget {
                     end: Alignment.bottomLeft,
                     colors: [
                       isDark
-                          ? colors.primaryContainer.withOpacity(0.1)
+                          ? colors.primaryContainer.withValues(alpha: 0.1)
                           : colors.primary,
                       color,
                     ],

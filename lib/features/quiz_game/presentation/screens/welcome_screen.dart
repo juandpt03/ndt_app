@@ -48,10 +48,10 @@ class WelcomeScreen extends StatelessWidget {
                   context.pushNamed(QuizScreen.routeName);
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
+                  backgroundColor: WidgetStateProperty.all(
                     Colors.red,
                   ),
-                  shape: MaterialStateProperty.all(
+                  shape: WidgetStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25),
                     ),
@@ -83,8 +83,8 @@ class WelcomeScreen extends StatelessWidget {
                   );
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
-                  shape: MaterialStateProperty.all(
+                  backgroundColor: WidgetStateProperty.all(Colors.red),
+                  shape: WidgetStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25),
                     ),

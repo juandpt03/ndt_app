@@ -51,13 +51,13 @@ class _PlayButton extends ConsumerWidget {
       },
       icon: Icon(
         Icons.play_arrow,
-        color: colors.onBackground,
+        color: colors.onSurface,
       ),
       label: Text(
         'Comenzar Lecturas',
         style: textStyle.bodyLarge!.copyWith(
           fontWeight: FontWeight.bold,
-          color: colors.onBackground,
+          color: colors.onSurface,
         ),
       ),
     );
@@ -147,7 +147,7 @@ class _Cards extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       surfaceTintColor:
-                          isDark ? colors.onBackground : Colors.transparent,
+                          isDark ? colors.onSurface : Colors.transparent,
                       elevation: 2,
                       margin: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 5),
@@ -175,7 +175,8 @@ class _Cards extends ConsumerWidget {
                                 ? null
                                 : [
                                     BoxShadow(
-                                      color: colors.onSurface.withOpacity(0.5),
+                                      color: colors.onSurface
+                                          .withValues(alpha: 0.5),
                                       blurRadius: 5,
                                       offset: const Offset(0, 5),
                                     ),
@@ -195,16 +196,18 @@ class _Cards extends ConsumerWidget {
                               .textTheme
                               .headlineSmall
                               ?.copyWith(
-                                color: colors.onBackground,
+                                color: colors.onSurface,
                                 fontSize: 21,
                               ),
                         ),
                         subtitle: Text(
                           description,
-                          style:
-                              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                    color: colors.onBackground.withOpacity(0.6),
-                                  ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.copyWith(
+                                color: colors.onSurface.withValues(alpha: 0.6),
+                              ),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -234,12 +237,12 @@ class _Title extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textStyle = Theme.of(context).textTheme.headlineMedium!.copyWith(
           fontWeight: FontWeight.bold,
-          color: isDark ? null : colors.primary.withOpacity(0.8),
+          color: isDark ? null : colors.primary.withValues(alpha: 0.8),
           fontSize: 25,
           shadows: isDark
               ? [
                   BoxShadow(
-                    color: colors.onBackground.withOpacity(0.2),
+                    color: colors.onSurface.withValues(alpha: 0.2),
                     blurRadius: 2,
                     offset: const Offset(1, 1),
                   ),
@@ -284,8 +287,8 @@ class _Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey.withOpacity(0.5),
-      highlightColor: Colors.white.withOpacity(0.5),
+      baseColor: Colors.grey.withValues(alpha: 0.5),
+      highlightColor: Colors.white.withValues(alpha: 0.5),
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[

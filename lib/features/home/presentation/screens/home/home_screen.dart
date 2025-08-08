@@ -22,7 +22,7 @@ class HomeScreen extends ConsumerWidget {
               end: Alignment.bottomCenter,
               colors: [
                 const Color(0xFF0B223D),
-                const Color(0xFF08182C).withOpacity(0.3),
+                const Color(0xFF08182C).withValues(alpha: 0.3),
               ],
             ),
           )

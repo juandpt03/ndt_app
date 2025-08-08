@@ -17,7 +17,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
       padding: const EdgeInsets.only(bottom: 20),
       child: DotNavigationBar(
         selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white.withOpacity(0.4),
+        unselectedItemColor: Colors.white.withValues(alpha: 0.4),
         paddingR: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         marginR: const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
         backgroundColor: Colors.black26,

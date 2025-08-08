@@ -78,7 +78,7 @@ class WelcomeScreen extends StatelessWidget {
                   QuickAlert.show(
                     context: context,
                     type: QuickAlertType.info,
-                    text: 'Contacto: juandpt03@gmai.com',
+                    text: 'Contacto: juandpt03@gmail.com',
                     confirmBtnColor: Colors.red,
                   );
                 },

@@ -52,11 +52,11 @@ class VideosScreen extends ConsumerWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      leading: const Icon(
+                      leading: const FaIcon(
                         FontAwesomeIcons.youtube,
                         color: Colors.red,
                       ),
-                      trailing: const Icon(FontAwesomeIcons.arrowRight),
+                      trailing: const FaIcon(FontAwesomeIcons.arrowRight),
                       subtitle: Text(videos[index].name),
                       onTap: () {
                         showDialog(

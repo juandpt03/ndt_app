@@ -12,7 +12,7 @@ class Content {
     required this.description,
     required this.image,
   });
-  toJson() => {
+  Map<String, String> toJson() => {
         'title': title,
         'description': description,
         'image': image,

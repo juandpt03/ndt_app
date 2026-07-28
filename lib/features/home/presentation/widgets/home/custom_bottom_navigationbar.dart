@@ -29,7 +29,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
         items: [
           /// Home
           DotNavigationBarItem(
-            icon: const Icon(
+            icon: const FaIcon(
               FontAwesomeIcons.house,
               size: 22,
             ),
@@ -37,7 +37,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
 
           /// Likes
           DotNavigationBarItem(
-            icon: const Icon(
+            icon: const FaIcon(
               FontAwesomeIcons.video,
               size: 22,
             ),
@@ -45,7 +45,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
 
           /// Search
           DotNavigationBarItem(
-            icon: const Icon(
+            icon: const FaIcon(
               FontAwesomeIcons.gamepad,
               size: 22,
             ),
@@ -53,7 +53,7 @@ class CustomBottomNavigationBar extends ConsumerWidget {
 
           /// Profile
           DotNavigationBarItem(
-            icon: const Icon(
+            icon: const FaIcon(
               FontAwesomeIcons.robot,
               size: 22,
             ),
